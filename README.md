@@ -1,12 +1,12 @@
 # Nome do projeto
 
-![GitHub repo size](https://img.shields.io/github/repo-size/omatheusant/canvastudio?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/omatheusant/canvastudio?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/omatheusant/canvastudio?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/omatheusant/canvastudio?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/omatheusant/canvastudio?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/omatheusant/ismaferstudio?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/omatheusant/ismaferstudio?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/omatheusant/ismaferstudio?style=for-the-badge)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/omatheusant/ismaferstudio?style=for-the-badge)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/omatheusant/ismaferstudio?style=for-the-badge)
 
-<img src="https://socialify.git.ci/omatheusant/CanvaStudio/image?description=1&font=Raleway&language=1&logo=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fdevicons%2Fdevicon%40latest%2Ficons%2Fnextjs%2Fnextjs-original.svg&name=1&owner=1&pattern=Solid&theme=Dark" alt="Exemplo imagem">
+<img src="https://socialify.git.ci/omatheusant/IsmaferStudio/image?description=1&font=Raleway&name=1&owner=1&pattern=Solid&theme=Dark" alt="Exemplo imagem">
 
 ### Roadmap!
 
