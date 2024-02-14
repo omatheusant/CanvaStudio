@@ -48,7 +48,7 @@ const ShapesMenu = ({
               }}
               className={`flex h-fit justify-between gap-10 rounded-none px-5 py-3 focus:border-none ${
                 activeElement.value === elem?.value
-                  ? "bg-primary-green"
+                  ? "bg-primary-yellow"
                   : "hover:bg-primary-grey-200"
               }`}
             >

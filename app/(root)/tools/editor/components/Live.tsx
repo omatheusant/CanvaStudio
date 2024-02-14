@@ -165,7 +165,7 @@ const Live = ({ canvasRef }: Props) => {
       onPointerDown={handlePointerDown}
       onPointerLeave={handlePointerLeave}
       onPointerUp={handlePointerUp}
-      className="border-2 border-yellow-500 relative flex h-full w-full flex-1 items-center justify-center"
+      className="relative flex h-full w-full flex-1 items-center justify-center"
     >
       <canvas ref={canvasRef} />
 

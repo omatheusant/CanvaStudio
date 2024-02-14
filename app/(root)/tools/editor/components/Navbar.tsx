@@ -9,7 +9,7 @@ import { ActiveElement, NavbarProps } from "@/types/type";
 import { Button } from "@/components/ui/button";
 import ShapesMenu from "./ShapesMenu";
 import ActiveUsers from "./users/ActiveUsers";
-// import { NewThread } from "./comments/NewThread";
+import { NewThread } from "./comments/NewThread";
 
 const Navbar = ({
   activeElement,
@@ -23,8 +23,8 @@ const Navbar = ({
       value.some((val) => val?.value === activeElement?.value));
 
   return (
-    <nav className="flex select-none items-center justify-between gap-4 bg-primary-black px-5 py-1 text-white">
-      <Image src="/assets/logo.svg" alt="FigPro Logo" width={80} height={80} />
+    <nav className="flex select-none items-center justify-between gap-4 bg-primary-black px-5 text-white">
+      <Image src="/assets/logo.svg" alt="FigPro Logo" width={58} height={20} />
 
       <ul className="flex flex-row">
         {navElements.map((item: ActiveElement | any) => (
@@ -37,13 +37,13 @@ const Navbar = ({
             className={`group px-2.5 py-5 flex justify-center items-center
             ${
               isActive(item.value)
-                ? "bg-primary-green"
+                ? "bg-primary-yellow"
                 : "hover:bg-primary-grey-200"
             }
             `}
           >
             {/* If value is an array means it's a nav element with sub options i.e., dropdown */}
-            {/* {Array.isArray(item.value) ? (
+            {Array.isArray(item.value) ? (
               <ShapesMenu
                 item={item}
                 activeElement={activeElement}
@@ -72,7 +72,7 @@ const Navbar = ({
                   className={isActive(item.value) ? "invert" : ""}
                 />
               </Button>
-            )} */}
+            )}
           </li>
         ))}
       </ul>
