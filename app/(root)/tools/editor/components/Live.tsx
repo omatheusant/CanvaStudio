@@ -11,9 +11,12 @@ import { CursorMode, CursorState, Reaction, ReactionEvent } from "@/types/type";
 import ReactionSelector from "./reaction/ReactionButton";
 import FlyingReaction from "./reaction/FlyingReaction";
 import useInterval from "@/hooks/useInterval";
-import Cursor from "./cursor/Cursor";
 
-const Live = () => {
+interface Props {
+  canvasRef: React.MutableRefObject<HTMLCanvasElement | null>;
+}
+
+const Live = ({ canvasRef }: Props) => {
   const others = useOthers();
   const [{ cursor }, updateMyPresence] = useMyPresence() as any;
 
@@ -157,13 +160,15 @@ const Live = () => {
 
   return (
     <div
+      id="canvas"
       onPointerMove={handlePointerMove}
       onPointerDown={handlePointerDown}
       onPointerLeave={handlePointerLeave}
       onPointerUp={handlePointerUp}
       className="border-2 border-yellow-500 relative flex h-full w-full flex-1 items-center justify-center"
     >
-      <h1 className="text-white text-2xl">Ismafer Studio</h1>
+      <canvas ref={canvasRef} />
+
       {cursor && (
         <CursorChat
           cursor={cursor}
