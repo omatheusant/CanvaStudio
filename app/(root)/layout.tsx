@@ -1,10 +1,13 @@
 import React from "react";
 import { Room } from "./tools/editor/Room";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main className="bg-background relative h-full">
-      <Room>{children}</Room>
+      <Room>
+        <TooltipProvider>{children}</TooltipProvider>
+      </Room>
     </main>
   );
 };
