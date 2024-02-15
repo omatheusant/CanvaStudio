@@ -1,4 +1,4 @@
-# Nome do projeto
+# Ismafer Studio
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/omatheusant/ismaferstudio?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/omatheusant/ismaferstudio?style=for-the-badge)

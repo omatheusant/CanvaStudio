@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import { Saira } from "next/font/google";
 
 export const metadata: Metadata = {
-  title: "Canva Studio",
+  title: "Ismafer Studio",
   description:
     "A minamilist web toolkit for create, edit and publish original designs with real-time colaboration!",
 };
