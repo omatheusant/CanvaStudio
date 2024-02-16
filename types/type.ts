@@ -1,5 +1,7 @@
-import { BaseUserMeta, User } from "@liveblocks/client";
+/* eslint-disable no-unused-vars */
 import { Gradient, Pattern } from "fabric/fabric-impl";
+import { fabric } from "fabric";
+import React from "react";
 
 export enum CursorMode {
   Hidden,
@@ -183,4 +185,10 @@ export type CursorChatProps = {
       message: string;
     }>,
   ) => void;
+};
+
+export type NavbarLink = {
+  label: string;
+  icon?: string;
+  route: string;
 };

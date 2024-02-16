@@ -33,7 +33,7 @@ export const shapeElements = [
   },
 ];
 
-export const navElements = [
+export const editorNavElements = [
   {
     icon: "/assets/select.svg",
     name: "Select",
