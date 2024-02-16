@@ -19,7 +19,7 @@ const ShapesMenu = ({
   imageInputRef,
 }: ShapesMenuProps) => {
   const isDropdownElem = item.value.some(
-    (elem) => elem?.value === activeElement.value
+    (elem) => elem?.value === activeElement.value,
   );
 
   return (
@@ -27,7 +27,7 @@ const ShapesMenu = ({
       <DropdownMenu>
         <DropdownMenuTrigger asChild className="no-ring">
           <Button
-            className="relative h-5 w-5 object-contain"
+            className="relative size-5 object-contain"
             onClick={() => handleActiveElement(item)}
           >
             <Image

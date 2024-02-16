@@ -13,6 +13,7 @@ import {
 } from "@/types/type";
 import { defaultNavElement } from "@/constants";
 import { createSpecificShape } from "./shapes";
+import React from "react";
 
 // initialize fabric canvas
 export const initializeFabric = ({
@@ -91,7 +92,7 @@ export const handleCanvasMouseDown = ({
     // create custom fabric object/shape and set it to shapeRef
     shapeRef.current = createSpecificShape(
       selectedShapeRef.current,
-      pointer as any
+      pointer as any,
     );
 
     // if shapeRef is not null, add it to canvas
@@ -155,7 +156,7 @@ export const handleCanvaseMouseMove = ({
         width: pointer.x - (shapeRef.current?.left || 0),
         height: pointer.y - (shapeRef.current?.top || 0),
       });
-
+      break;
     default:
       break;
   }
@@ -207,6 +208,7 @@ export const handleCanvasObjectModified = ({
   const target = options.target;
   if (!target) return;
 
+  // eslint-disable-next-line eqeqeq
   if (target?.type == "activeSelection") {
     // fix this
   } else {
@@ -253,8 +255,8 @@ export const handleCanvasObjectMoving = ({
       0,
       Math.min(
         target.left,
-        (canvas.width || 0) - (target.getScaledWidth() || target.width || 0)
-      )
+        (canvas.width || 0) - (target.getScaledWidth() || target.width || 0),
+      ),
     );
   }
 
@@ -264,8 +266,8 @@ export const handleCanvasObjectMoving = ({
       0,
       Math.min(
         target.top,
-        (canvas.height || 0) - (target.getScaledHeight() || target.height || 0)
-      )
+        (canvas.height || 0) - (target.getScaledHeight() || target.height || 0),
+      ),
     );
   }
 };
@@ -344,6 +346,7 @@ export const renderCanvas = ({
   fabricRef.current?.clear();
 
   // render all objects on canvas
+  // eslint-disable-next-line array-callback-return
   Array.from(canvasObjects, ([objectId, objectData]) => {
     /**
      * enlivenObjects() is used to render objects on canvas.
@@ -374,7 +377,7 @@ export const renderCanvas = ({
        *
        * Fabric Namespace: http://fabricjs.com/docs/fabric.html
        */
-      "fabric"
+      "fabric",
     );
   });
 

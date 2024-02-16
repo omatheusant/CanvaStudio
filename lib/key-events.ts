@@ -17,7 +17,7 @@ export const handleCopy = (canvas: fabric.Canvas) => {
 
 export const handlePaste = (
   canvas: fabric.Canvas,
-  syncShapeInStorage: (shape: fabric.Object) => void
+  syncShapeInStorage: (shape: fabric.Object) => void,
 ) => {
   if (!canvas || !(canvas instanceof fabric.Canvas)) {
     console.error("Invalid canvas object. Aborting paste operation.");
@@ -49,7 +49,7 @@ export const handlePaste = (
             });
             canvas.renderAll();
           },
-          "fabric"
+          "fabric",
         );
       });
     } catch (error) {
@@ -60,7 +60,7 @@ export const handlePaste = (
 
 export const handleDelete = (
   canvas: fabric.Canvas,
-  deleteShapeFromStorage: (id: string) => void
+  deleteShapeFromStorage: (id: string) => void,
 ) => {
   const activeObjects = canvas.getActiveObjects();
   if (!activeObjects || activeObjects.length === 0) return;

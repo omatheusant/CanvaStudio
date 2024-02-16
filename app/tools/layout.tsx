@@ -4,7 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className="bg-background relative h-full">
+    <main className="relative h-full">
       <Room>
         <TooltipProvider>{children}</TooltipProvider>
       </Room>

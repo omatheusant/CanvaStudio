@@ -49,7 +49,7 @@ export const createLine = (pointer: PointerEvent) => {
       stroke: "#aabbcc",
       strokeWidth: 2,
       objectId: uuidv4(),
-    } as CustomFabricObject<fabric.Line>
+    } as CustomFabricObject<fabric.Line>,
   );
 };
 
@@ -61,13 +61,13 @@ export const createText = (pointer: PointerEvent, text: string) => {
     fontFamily: "Helvetica",
     fontSize: 36,
     fontWeight: "400",
-    objectId: uuidv4()
+    objectId: uuidv4(),
   } as fabric.ITextOptions);
 };
 
 export const createSpecificShape = (
   shapeType: string,
-  pointer: PointerEvent
+  pointer: PointerEvent,
 ) => {
   switch (shapeType) {
     case "rectangle":
@@ -121,7 +121,7 @@ export const handleImageUpload = ({
 export const createShape = (
   canvas: fabric.Canvas,
   pointer: PointerEvent,
-  shapeType: string
+  shapeType: string,
 ) => {
   if (shapeType === "freeform") {
     canvas.isDrawingMode = true;
@@ -145,7 +145,7 @@ export const modifyShape = ({
   // if  property is width or height, set the scale of the selected element
   if (property === "width") {
     selectedElement.set("scaleX", 1);
-    selectedElement.set("width", value);  
+    selectedElement.set("width", value);
   } else if (property === "height") {
     selectedElement.set("scaleY", 1);
     selectedElement.set("height", value);

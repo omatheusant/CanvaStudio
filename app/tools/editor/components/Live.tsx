@@ -38,13 +38,13 @@ const Live = ({ canvasRef, undo, redo }: Props) => {
 
   useInterval(() => {
     setReactions((reactions) =>
-      reactions.filter((reaction) => reaction.timestamp > Date.now() - 4000)
+      reactions.filter((reaction) => reaction.timestamp > Date.now() - 4000),
     );
   }, 1000);
 
   useInterval(() => {
     setReactions((reactions) =>
-      reactions.filter((reaction) => reaction.timestamp > Date.now() - 4000)
+      reactions.filter((reaction) => reaction.timestamp > Date.now() - 4000),
     );
   }, 1000);
 
@@ -62,7 +62,7 @@ const Live = ({ canvasRef, undo, redo }: Props) => {
             value: cursorState.reaction,
             timestamp: Date.now(),
           },
-        ])
+        ]),
       );
 
       broadcast({
@@ -83,7 +83,7 @@ const Live = ({ canvasRef, undo, redo }: Props) => {
           value: event.value,
           timestamp: Date.now(),
         },
-      ])
+      ]),
     );
   });
 
@@ -143,10 +143,10 @@ const Live = ({ canvasRef, undo, redo }: Props) => {
       setCursorState((state: CursorState) =>
         cursorState.mode === CursorMode.Reaction
           ? { ...state, isPressed: true }
-          : state
+          : state,
       );
     },
-    [cursorState.mode, setCursorState]
+    [cursorState.mode, setCursorState],
   );
 
   const handlePointerUp = useCallback(
@@ -154,10 +154,10 @@ const Live = ({ canvasRef, undo, redo }: Props) => {
       setCursorState((state: CursorState) =>
         cursorState.mode === CursorMode.Reaction
           ? { ...state, isPressed: true }
-          : state
+          : state,
       );
     },
-    [cursorState.mode, setCursorState]
+    [cursorState.mode, setCursorState],
   );
 
   useEffect(() => {
@@ -201,7 +201,7 @@ const Live = ({ canvasRef, undo, redo }: Props) => {
         onPointerDown={handlePointerDown}
         onPointerLeave={handlePointerLeave}
         onPointerUp={handlePointerUp}
-        className="relative flex h-full w-full flex-1 items-center justify-center"
+        className="relative flex size-full flex-1 items-center justify-center"
       >
         <canvas ref={canvasRef} />
 

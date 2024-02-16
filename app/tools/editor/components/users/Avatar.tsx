@@ -16,12 +16,12 @@ const Avatar = ({ name, otherStyles }: Props) => (
     <Tooltip>
       <TooltipTrigger>
         <div
-          className={`relative h-9 w-9 rounded-full ${otherStyles}`}
+          className={`relative size-9 rounded-full ${otherStyles}`}
           data-tooltip={name}
         >
           <Image
             src={`https://liveblocks.io/avatars/avatar-${Math.floor(
-              Math.random() * 30
+              Math.random() * 30,
             )}.png`}
             fill
             className="rounded-full"

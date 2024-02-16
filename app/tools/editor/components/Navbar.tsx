@@ -34,7 +34,7 @@ const Navbar = ({
               if (Array.isArray(item.value)) return;
               handleActiveElement(item);
             }}
-            className={`group px-2.5 py-5 flex justify-center items-center
+            className={`group flex items-center justify-center px-2.5 py-5
             ${
               isActive(item.value)
                 ? "bg-primary-yellow"
@@ -54,7 +54,7 @@ const Navbar = ({
             ) : item?.value === "comments" ? (
               // If value is comments, trigger the NewThread component
               <NewThread>
-                <Button className="relative w-5 h-5 object-contain">
+                <Button className="relative size-5 object-contain">
                   <Image
                     src={item.icon}
                     alt={item.name}
@@ -64,7 +64,7 @@ const Navbar = ({
                 </Button>
               </NewThread>
             ) : (
-              <Button className="relative w-5 h-5 object-contain">
+              <Button className="relative size-5 object-contain">
                 <Image
                   src={item.icon}
                   alt={item.name}
@@ -84,5 +84,5 @@ const Navbar = ({
 
 export default memo(
   Navbar,
-  (prevProps, nextProps) => prevProps.activeElement === nextProps.activeElement
+  (prevProps, nextProps) => prevProps.activeElement === nextProps.activeElement,
 );

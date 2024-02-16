@@ -110,7 +110,7 @@ export const NewThread = ({ children }: Props) => {
     return () => {
       document.documentElement.removeEventListener(
         "pointermove",
-        handlePointerMove
+        handlePointerMove,
       );
     };
   }, []);
@@ -147,11 +147,11 @@ export const NewThread = ({ children }: Props) => {
     return () => {
       document.documentElement.removeEventListener(
         "pointerdown",
-        handlePointerDown
+        handlePointerDown,
       );
       document.documentElement.removeEventListener(
         "contextmenu",
-        handleContextMenu
+        handleContextMenu,
       );
     };
   }, [creatingCommentState]);
@@ -190,7 +190,7 @@ export const NewThread = ({ children }: Props) => {
       setCreatingCommentState("complete");
       setAllowUseComposer(false);
     },
-    [createThread, composerCoords, maxZIndex]
+    [createThread, composerCoords, maxZIndex],
   );
 
   return (
@@ -207,7 +207,7 @@ export const NewThread = ({ children }: Props) => {
       <Slot
         onClick={() =>
           setCreatingCommentState(
-            creatingCommentState !== "complete" ? "complete" : "placing"
+            creatingCommentState !== "complete" ? "complete" : "placing",
           )
         }
         style={{ opacity: creatingCommentState !== "complete" ? 0.7 : 1 }}

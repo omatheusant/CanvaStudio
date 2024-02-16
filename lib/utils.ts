@@ -104,6 +104,7 @@ export const exportToPdf = () => {
   if (!canvas) return;
 
   // use jspdf
+  // eslint-disable-next-line new-cap
   const doc = new jsPDF({
     orientation: "landscape",
     unit: "px",

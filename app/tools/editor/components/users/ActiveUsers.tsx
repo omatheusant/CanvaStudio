@@ -3,10 +3,7 @@
 import { useMemo } from "react";
 
 import { generateRandomName } from "@/lib/utils";
-import {
-  useOthers,
-  useSelf,
-} from "@/app/(root)/tools/editor/liveblocks.config";
+import { useOthers, useSelf } from "@/app/tools/editor/liveblocks.config";
 
 import Avatar from "./Avatar";
 
@@ -33,7 +30,7 @@ const ActiveUsers = () => {
         ))}
 
         {hasMoreUsers && (
-          <div className="z-10 -ml-3 flex h-9 w-9 items-center justify-center rounded-full bg-primary-black">
+          <div className="z-10 -ml-3 flex size-9 items-center justify-center rounded-full bg-primary-black">
             +{others.length - 2}
           </div>
         )}

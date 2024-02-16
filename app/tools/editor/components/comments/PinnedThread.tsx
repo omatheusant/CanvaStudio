@@ -16,7 +16,7 @@ export const PinnedThread = ({ thread, onFocus, ...props }: Props) => {
   // Open pinned threads that have just been created
   const startMinimized = useMemo(
     () => Number(new Date()) - Number(new Date(thread.createdAt)) > 100,
-    [thread]
+    [thread],
   );
 
   const [minimized, setMinimized] = useState(startMinimized);
@@ -49,12 +49,12 @@ export const PinnedThread = ({ thread, onFocus, ...props }: Props) => {
         }}
       >
         <div
-          className="relative flex h-9 w-9 select-none items-center justify-center rounded-bl-full rounded-br-full rounded-tl-md rounded-tr-full bg-white shadow"
+          className="relative flex size-9 select-none items-center justify-center rounded-r-full rounded-bl-full rounded-tl-md bg-white shadow"
           data-draggable={true}
         >
           <Image
             src={`https://liveblocks.io/avatars/avatar-${Math.floor(
-              Math.random() * 30
+              Math.random() * 30,
             )}.png`}
             alt="Dummy Name"
             width={28}
@@ -76,7 +76,7 @@ export const PinnedThread = ({ thread, onFocus, ...props }: Props) => {
         ) : null}
       </div>
     ),
-    [thread.comments.length, minimized]
+    [thread.comments.length, minimized],
   );
 
   return <>{memoizedContent}</>;

@@ -2,6 +2,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import { Metadata } from "next";
 import { Saira } from "next/font/google";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Ismafer Studio",
