@@ -8,7 +8,7 @@ import {
   useEditThreadMetadata,
   useThreads,
   useUser,
-} from "@/app/(root)/tools/editor/liveblocks.config";
+} from "@/app/tools/editor/liveblocks.config";
 import { useMaxZIndex } from "@/lib/useMaxZIndex";
 
 import { PinnedThread } from "./PinnedThread";

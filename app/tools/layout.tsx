@@ -1,5 +1,5 @@
 import React from "react";
-import { Room } from "./tools/editor/Room";
+import { Room } from "@/app/tools/editor/Room";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {

@@ -25,6 +25,8 @@ body {
 
     --secondary: 0 0% 96%;
     --secondary-foreground: 0 0% 5%;
+  }
+}
 
 @layer utilities {
   .no-ring {
