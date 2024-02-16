@@ -4,6 +4,8 @@ import { Metadata } from "next";
 import { Saira } from "next/font/google";
 import React from "react";
 
+import { dark } from "@clerk/themes";
+
 export const metadata: Metadata = {
   title: "Ismafer Studio",
   description:
@@ -22,7 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+        baseTheme: dark,
+      }}
+    >
       <html lang="en">
         <body className={`${font.className} bg-primary-grey-100`}>
           {children}

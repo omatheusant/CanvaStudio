@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { memo } from "react";
 
-import { navElements } from "@/constants";
+import { navElements } from "@/constants/editor";
 import { ActiveElement, NavbarProps } from "@/types/type";
 
 import { Button } from "@/components/ui/button";

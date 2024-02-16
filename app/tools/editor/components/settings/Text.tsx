@@ -2,7 +2,7 @@ import {
   fontFamilyOptions,
   fontSizeOptions,
   fontWeightOptions,
-} from "@/constants";
+} from "@/constants/editor";
 
 import {
   Select,

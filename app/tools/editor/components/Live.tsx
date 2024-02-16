@@ -17,7 +17,7 @@ import {
   ContextMenuItem,
   ContextMenuTrigger,
 } from "@/components/ui/context-menu";
-import { shortcuts } from "@/constants";
+import { shortcuts } from "@/constants/editor";
 
 interface Props {
   canvasRef: React.MutableRefObject<HTMLCanvasElement | null>;

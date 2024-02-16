@@ -11,7 +11,7 @@ import {
   CanvasSelectionCreated,
   RenderCanvas,
 } from "@/types/type";
-import { defaultNavElement } from "@/constants";
+import { defaultNavElement } from "@/constants/editor";
 import { createSpecificShape } from "./shapes";
 import React from "react";
 
