@@ -54,7 +54,7 @@ const Navbar = ({
             ) : item?.value === "comments" ? (
               // If value is comments, trigger the NewThread component
               <NewThread>
-                <Button className="relative size-5 object-contain">
+                <Button className="relative size-5 bg-transparent object-contain hover:bg-transparent">
                   <Image
                     src={item.icon}
                     alt={item.name}
@@ -64,7 +64,7 @@ const Navbar = ({
                 </Button>
               </NewThread>
             ) : (
-              <Button className="relative size-5 object-contain">
+              <Button className="relative size-5 bg-transparent object-contain hover:bg-transparent">
                 <Image
                   src={item.icon}
                   alt={item.name}

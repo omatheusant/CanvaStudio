@@ -30,7 +30,7 @@ const config = {
           grey: {
             100: "#252422",
             200: "#343434",
-            300: "#C4D3ED",
+            300: "#CBCBCB",
           },
           white: "#e6e6e6",
           DEFAULT: "hsl(var(--primary))",
