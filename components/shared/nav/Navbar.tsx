@@ -1,7 +1,6 @@
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import React from "react";
-import { NavMenu } from "./components/NavMenu";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -11,7 +10,7 @@ const Navbar = () => {
       <Link href="/">
         <Image src="/assets/logo.svg" width={60} height={60} alt="Logo" />
       </Link>
-      <NavMenu />
+      {/* <NavMenu /> */}
       <SignedIn>
         <UserButton />
       </SignedIn>
