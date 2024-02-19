@@ -105,4 +105,7 @@
   .right-menu-item {
     @apply flex justify-between px-3 py-2 hover:bg-primary-grey-200 !important;
   }
+  .transition-ease {
+    @apply transition ease-in-out duration-500 !important;
+  }
 }
