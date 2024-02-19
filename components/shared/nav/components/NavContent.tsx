@@ -7,6 +7,7 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
+  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { navItems } from "@/constants";
 import { usePathname } from "next/navigation";
@@ -37,7 +38,9 @@ const NavContent = () => {
                 href={item.route}
                 className={`${isActive ? "text-primary-white" : "text-primary-grey-300"} text-base font-semibold hover:text-primary-white `}
               >
-                <NavigationMenuLink>{item.label}</NavigationMenuLink>
+                <NavigationMenuTrigger className="text-lg">
+                  {item.label}
+                </NavigationMenuTrigger>
               </Link>
             </NavigationMenuItem>
           );
