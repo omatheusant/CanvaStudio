@@ -13,7 +13,7 @@ const HomePage = () => {
           Ferramentas de uso rápido para criação e edição de fotos, dedign e
           anúncios para diferentes marketplaces
         </span>
-        <Button className="mt-3 h-12 w-64 text-xl font-semibold">
+        <Button className="primary-gradient mt-3 h-12 w-64 text-xl font-semibold">
           Comece agora
         </Button>
       </div>

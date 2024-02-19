@@ -17,7 +17,7 @@ const Navbar = () => {
       </SignedIn>
       <SignedOut>
         <Link href="/sign-in">
-          <Button className="transition-ease rounded-sm px-6 text-base font-semibold">
+          <Button className=" primary-gradient rounded-sm px-6 text-base font-semibold">
             Entrar
           </Button>
         </Link>
