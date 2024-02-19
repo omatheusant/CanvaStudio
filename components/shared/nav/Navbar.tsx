@@ -1,9 +1,9 @@
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import React from "react";
-import { NavMenu } from "./components/NavMenu";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { NavMenu } from "./components/NavMenu";
 
 const Navbar = () => {
   return (
