@@ -11,6 +11,7 @@
     "lint:fix": "prettier --write ."
   },
   "dependencies": {
+    "@clerk/localizations": "^1.26.15",
     "@clerk/nextjs": "^4.29.6",
     "@clerk/themes": "^1.7.9",
     "@liveblocks/client": "^1.9.7",

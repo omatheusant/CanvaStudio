@@ -65,7 +65,7 @@ const ListItem = ({ children, title, imageUrl, route }: ListItemProps) => {
           width={70}
           height={70}
           alt="List Item Image"
-          className="rounded-sm"
+          className="z-10 rounded-sm"
         />
       </div>
       <div className="p-2">

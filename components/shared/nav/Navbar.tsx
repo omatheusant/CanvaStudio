@@ -1,8 +1,9 @@
-import { UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import React from "react";
 import { NavMenu } from "./components/NavMenu";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   return (
@@ -11,7 +12,16 @@ const Navbar = () => {
         <Image src="/assets/logo.svg" width={60} height={60} alt="Logo" />
       </Link>
       <NavMenu />
-      <UserButton />
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
+      <SignedOut>
+        <Link href="/sign-in">
+          <Button className="transition-ease rounded-sm px-6 text-base font-semibold">
+            Entrar
+          </Button>
+        </Link>
+      </SignedOut>
     </nav>
   );
 };

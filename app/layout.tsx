@@ -3,6 +3,7 @@ import "./globals.css";
 import { Metadata } from "next";
 import { Saira } from "next/font/google";
 import React from "react";
+import { ptBR } from "@clerk/localizations";
 
 import { dark } from "@clerk/themes";
 
@@ -25,8 +26,10 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider
+      localization={ptBR}
       appearance={{
         baseTheme: dark,
+        variables: { colorPrimary: "#ffb100" },
       }}
     >
       <html lang="en">
