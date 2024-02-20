@@ -1,15 +1,8 @@
 import React, { useCallback, useEffect, useState } from "react";
 import LiveCursors from "./cursor/LiveCursors";
-import {
-  useBroadcastEvent,
-  useEventListener,
-  useMyPresence,
-} from "../liveblocks.config";
+import { useMyPresence } from "../../liveblocks.config";
 import CursorChat from "./cursor/CursorChat";
-import { CursorMode, CursorState, Reaction } from "@/types/type";
-import ReactionSelector from "./reaction/ReactionButton";
-import FlyingReaction from "./reaction/FlyingReaction";
-import useInterval from "@/hooks/useInterval";
+import { CursorMode, CursorState } from "@/types/type";
 import { Comments } from "./comments/Comments";
 import {
   ContextMenu,
@@ -32,65 +25,6 @@ const Live = ({ canvasRef, undo, redo }: Props) => {
     mode: CursorMode.Hidden,
   });
 
-  const [reactions, setReactions] = useState<Reaction[]>([]);
-
-  const broadcast = useBroadcastEvent();
-
-  useInterval(() => {
-    setReactions((reactions) =>
-      reactions.filter((reaction) => reaction.timestamp > Date.now() - 4000),
-    );
-  }, 1000);
-
-  useInterval(() => {
-    setReactions((reactions) =>
-      reactions.filter((reaction) => reaction.timestamp > Date.now() - 4000),
-    );
-  }, 1000);
-
-  useInterval(() => {
-    if (
-      cursorState.mode === CursorMode.Reaction &&
-      cursorState.isPressed &&
-      cursor
-    ) {
-      // concat all the reactions created on mouse click
-      setReactions((reactions) =>
-        reactions.concat([
-          {
-            point: { x: cursor.x, y: cursor.y },
-            value: cursorState.reaction,
-            timestamp: Date.now(),
-          },
-        ]),
-      );
-
-      broadcast({
-        x: cursor.x,
-        y: cursor.y,
-        value: cursorState.reaction,
-      });
-    }
-  }, 100);
-
-  useEventListener((eventData) => {
-    const event = eventData.event;
-
-    setReactions((reactions) =>
-      reactions.concat([
-        {
-          point: { x: event.x, y: event.y },
-          value: event.value,
-          timestamp: Date.now(),
-        },
-      ]),
-    );
-  });
-
-  const setReaction = useCallback((reaction: string) => {
-    setCursorState({ mode: CursorMode.Reaction, reaction, isPressed: false });
-  }, []);
-
   const handleContextMenuClick = useCallback((key: string) => {
     switch (key) {
       case "Chat":
@@ -99,10 +33,6 @@ const Live = ({ canvasRef, undo, redo }: Props) => {
           previousMessage: null,
           message: "",
         });
-        break;
-
-      case "Reactions":
-        setCursorState({ mode: CursorMode.ReactionSelector });
         break;
 
       case "Undo":
@@ -214,23 +144,6 @@ const Live = ({ canvasRef, undo, redo }: Props) => {
           />
         )}
 
-        {reactions.map((r) => (
-          <FlyingReaction
-            key={r.timestamp.toString()}
-            x={r.point.x}
-            y={r.point.y}
-            timestamp={r.timestamp}
-            value={r.value}
-          />
-        ))}
-
-        {cursorState.mode === CursorMode.ReactionSelector && (
-          <ReactionSelector
-            setReaction={(reaction) => {
-              setReaction(reaction);
-            }}
-          />
-        )}
         <LiveCursors />
 
         <Comments />

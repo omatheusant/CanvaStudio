@@ -20,7 +20,12 @@ import {
   renderCanvas,
 } from "@/lib/canvas";
 import { ActiveElement, Attributes } from "@/types/type";
-import { useMutation, useRedo, useStorage, useUndo } from "./liveblocks.config";
+import {
+  useMutation,
+  useRedo,
+  useStorage,
+  useUndo,
+} from "../liveblocks.config";
 import { defaultNavElement } from "@/constants/editor";
 import { handleDelete, handleKeyDown } from "@/lib/key-events";
 import { handleImageUpload } from "@/lib/shapes";

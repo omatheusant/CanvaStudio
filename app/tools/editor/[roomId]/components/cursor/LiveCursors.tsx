@@ -1,7 +1,7 @@
 import React from "react";
 import Cursor from "./Cursor";
 import { COLORS } from "@/constants/editor";
-import { useOthers } from "../../liveblocks.config";
+import { useOthers } from "@/app/tools/editor/liveblocks.config";
 
 const LiveCursors = () => {
   const others = useOthers();
