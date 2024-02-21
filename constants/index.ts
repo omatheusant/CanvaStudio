@@ -13,7 +13,7 @@ export const navItems: NavbarItem[] = [
       },
       {
         name: "Editor",
-        route: "/tools/editor",
+        route: `/tools/editor/`,
         description: "Crie e edite designs personalizados.",
         imageUrl: "/assets/editor.png",
       },

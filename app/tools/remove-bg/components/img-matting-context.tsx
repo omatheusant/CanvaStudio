@@ -15,7 +15,7 @@ interface ImageMattingContextType {
   processMessage: string;
   hasProcessedImage: boolean;
   imageUrl: string;
-  originalImageUrl: string | undefined;
+  originalImageUrl: string;
   processImage: (path: string) => Promise<void>;
   resetState: () => void;
   inferenceTime: number;
@@ -27,7 +27,7 @@ const ImageMattingContext = createContext<ImageMattingContextType>({
   processMessage: "",
   hasProcessedImage: false,
   imageUrl: "",
-  originalImageUrl: undefined,
+  originalImageUrl: "",
   processImage: async () => {},
   resetState: () => {},
   inferenceTime: 0,
@@ -55,9 +55,7 @@ const ImageMattingContextProvider = ({
   );
   const [hasProcessedImage, setHasProcessedImage] = useState<boolean>(false);
   const [imageUrl, setImageUrl] = useState<string>("");
-  const [originalImageUrl, setOriginalImageUrl] = useState<
-    string | undefined
-  >();
+  const [originalImageUrl, setOriginalImageUrl] = useState<string>("");
   const [inferenceTime, setInferenceTime] = useState<number>(0);
 
   function resetState() {

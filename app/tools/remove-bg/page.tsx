@@ -15,9 +15,15 @@ const RemoveBg = () => {
     isProcessing,
     processMessage,
     processImage,
+    resetState,
   } = useImageMatting();
 
   const handleClick = () => {
+    imageInputRef.current?.click();
+  };
+
+  const handleNewImage = () => {
+    resetState();
     imageInputRef.current?.click();
   };
 
@@ -41,8 +47,28 @@ const RemoveBg = () => {
 
   return (
     <section className="flex h-full flex-col items-center gap-2 font-semibold">
-      <h1 className="text-3xl">Removedor de Fundo</h1>
-      <div className="relative flex min-h-[400px] w-fit min-w-[600px] flex-col items-center justify-center gap-5 rounded-xl bg-primary-black shadow-lg shadow-primary-black">
+      <h1 className="mb-4 text-4xl">Removedor de Fundo</h1>
+      <div className="relative flex min-h-[400px] w-fit min-w-[600px] flex-col items-center justify-center gap-3 rounded-xl bg-primary-black shadow-lg shadow-primary-black">
+        {isProcessing && (
+          <div className="relative flex size-full items-center justify-center">
+            <Image
+              width={500}
+              height={500}
+              src={originalImageUrl}
+              alt="Imagem com fundo"
+              className="blur-sm"
+            />
+            <div className="absolute flex flex-col items-center justify-center">
+              <Image
+                src="/assets/loading.svg"
+                alt="loading gif"
+                width={80}
+                height={80}
+              />
+              <p className="text-lg font-thin">{processMessage}</p>
+            </div>
+          </div>
+        )}
         {!isProcessing && !hasProcessedImage && (
           <Button
             onClick={handleClick}
@@ -52,35 +78,29 @@ const RemoveBg = () => {
           </Button>
         )}
 
-        {!imageUrl && originalImageUrl && (
-          <div className="relative flex size-full items-center justify-center">
-            <Image
-              width={500}
-              height={500}
-              src={originalImageUrl}
-              alt="Imagem com fundo"
-              className="blur-sm"
-            />
-            <p className="absolute">{processMessage}</p>
-          </div>
-        )}
-
         {imageUrl && (
-          <>
+          <div>
             <Image
               fill
               src={imageUrl}
               alt="Imagem sem fundo"
               className="relative"
             />
-            <a
-              href={imageUrl}
-              download="remove-bg-image"
-              className="absolute -bottom-5"
-            >
-              <Button className="font-semibold">Download</Button>
-            </a>
-          </>
+            <div className="absolute -right-36 bottom-0  flex flex-col items-end gap-3">
+              <a href={imageUrl} download="remove-bg-image">
+                <Button className="primary-gradient z-20 font-semibold">
+                  Download
+                </Button>
+              </a>
+              <Button
+                variant="outline"
+                onClick={handleNewImage}
+                className=" z-20 font-semibold"
+              >
+                Nova imagem
+              </Button>
+            </div>
+          </div>
         )}
 
         <input
