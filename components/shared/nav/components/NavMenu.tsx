@@ -26,7 +26,7 @@ export function NavMenu() {
                   {item.label}
                 </Link>
               </NavigationMenuTrigger>
-              <NavigationMenuContent className="grid w-[400px] grid-cols-1 gap-3 p-3 md:w-max">
+              <NavigationMenuContent className="grid w-[400px] grid-cols-1 gap-3 bg-primary-black p-3 md:w-max">
                 {item.subItems?.map((subItem) => (
                   <ListItem
                     key={subItem.name}

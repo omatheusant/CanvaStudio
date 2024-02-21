@@ -3,8 +3,8 @@ import React from "react";
 
 const HomePage = () => {
   return (
-    <div className="flex h-[70vh] items-center justify-center px-8">
-      <div className=" flex  flex-col items-center gap-3 text-center">
+    <div className="flex items-center justify-center px-8">
+      <div className=" flex flex-col items-center gap-3 text-center">
         <h1 className="text-6xl font-semibold">
           O que você vai <span className="text-gradient">criar </span>
           hoje?

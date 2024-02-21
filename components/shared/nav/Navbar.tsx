@@ -7,7 +7,7 @@ import { NavMenu } from "./components/NavMenu";
 
 const Navbar = () => {
   return (
-    <nav className="flex-between w-full bg-primary-black px-8 py-3">
+    <nav className="flex-between fixed left-0 top-0 w-full bg-primary-black px-8 py-3">
       <Link href="/">
         <Image src="/assets/logo.svg" width={60} height={60} alt="Logo" />
       </Link>
