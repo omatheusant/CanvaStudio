@@ -13,8 +13,10 @@ import {
 } from "@/components/ui/navigation-menu";
 import { navItems } from "@/constants";
 import Image from "next/image";
+import { useUser } from "@clerk/nextjs";
 
 export function NavMenu() {
+  const { user } = useUser();
   return (
     <NavigationMenu className="max-md:hidden">
       <NavigationMenuList>
@@ -27,16 +29,22 @@ export function NavMenu() {
                 </Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent className="grid w-[400px] grid-cols-1 gap-3 bg-primary-black p-3 md:w-max">
-                {item.subItems?.map((subItem) => (
-                  <ListItem
-                    key={subItem.name}
-                    title={subItem.name}
-                    imageUrl={subItem.imageUrl}
-                    route={subItem.route}
-                  >
-                    {subItem.description}
-                  </ListItem>
-                ))}
+                {item.subItems?.map((subItem) => {
+                  return (
+                    <ListItem
+                      key={subItem.name}
+                      title={subItem.name}
+                      imageUrl={subItem.imageUrl}
+                      route={
+                        subItem.route.includes("/tools/editor")
+                          ? `${subItem.route}/${user?.username}`
+                          : subItem.route
+                      }
+                    >
+                      {subItem.description}
+                    </ListItem>
+                  );
+                })}
               </NavigationMenuContent>
             </NavigationMenuItem>
           );

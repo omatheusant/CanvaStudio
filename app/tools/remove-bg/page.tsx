@@ -48,7 +48,7 @@ const RemoveBg = () => {
   return (
     <section className="flex h-full flex-col items-center gap-2 font-semibold">
       <h1 className="mb-4 text-4xl">Removedor de Fundo</h1>
-      <div className="relative flex min-h-[400px] w-fit min-w-[600px] flex-col items-center justify-center gap-3 rounded-xl bg-primary-black shadow-lg shadow-primary-black">
+      <div className="relative -z-10 flex min-h-[400px] w-fit min-w-[600px] flex-col items-center justify-center gap-3 rounded-xl bg-primary-black shadow-lg shadow-primary-black">
         {isProcessing && (
           <div className="relative flex size-full items-center justify-center">
             <Image
