@@ -15,8 +15,8 @@ import { navItems } from "@/constants";
 import Image from "next/image";
 import { useUser } from "@clerk/nextjs";
 
-export function NavMenu({ ...props }) {
-  const { user } = useUser();
+export async function NavMenu({ ...props }) {
+  const { user } = await useUser();
   return (
     <NavigationMenu {...props}>
       <NavigationMenuList>
