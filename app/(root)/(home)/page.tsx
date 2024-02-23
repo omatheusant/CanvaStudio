@@ -5,11 +5,11 @@ const HomePage = () => {
   return (
     <div className="flex items-center justify-center px-8">
       <div className=" flex flex-col items-center gap-3 text-center">
-        <h1 className="text-6xl font-semibold">
+        <h1 className="text-6xl font-semibold lg:text-7xl">
           O que você vai <span className="text-gradient">criar </span>
           hoje?
         </h1>
-        <span className="max-w-[70%]">
+        <span className="max-w-[70%] xl:text-xl">
           Ferramentas de uso rápido para criação e edição de fotos, dedign e
           anúncios para diferentes marketplaces
         </span>
