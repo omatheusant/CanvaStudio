@@ -51,7 +51,7 @@ const RemoveBg = () => {
         Removedor de Fundo
       </h1>
       <div className="relative size-fit">
-        <div className="relative -z-10 flex min-h-[400px] w-fit min-w-[600px] flex-col items-center justify-center gap-3 rounded-xl bg-primary-black shadow-lg shadow-primary-black">
+        <div className="relative z-10 flex min-h-[400px] w-fit min-w-[600px] flex-col items-center justify-center gap-3 rounded-xl bg-primary-black shadow-lg shadow-primary-black">
           {isProcessing && (
             <div className="relative flex size-full items-center justify-center">
               <Image
@@ -112,7 +112,7 @@ const RemoveBg = () => {
           <Button
             style={{ transform: "translate(-50%, -50%)" }}
             onClick={handleClick}
-            className="primary-gradient absolute left-[50%] top-[50%] font-semibold"
+            className="primary-gradient absolute left-[50%] top-[50%] z-10 font-semibold"
           >
             Selecionar imagem
           </Button>

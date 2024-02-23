@@ -15,8 +15,8 @@ import { navItems } from "@/constants";
 import Image from "next/image";
 import { useUser } from "@clerk/nextjs";
 
-export async function NavMenu({ ...props }) {
-  const { user } = await useUser();
+export function NavMenu({ ...props }) {
+  const { user } = useUser();
   return (
     <NavigationMenu {...props}>
       <NavigationMenuList>
@@ -72,8 +72,9 @@ const ListItem = ({ children, title, imageUrl, route }: ListItemProps) => {
           src={imageUrl}
           width={70}
           height={70}
+          objectFit="cover"
           alt="List Item Image"
-          className="z-10 rounded-sm"
+          className="z-10 min-h-[70px] min-w-[70px] rounded-sm"
         />
       </div>
       <div className="p-2">
