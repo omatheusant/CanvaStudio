@@ -15,10 +15,10 @@ import { navItems } from "@/constants";
 import Image from "next/image";
 import { useUser } from "@clerk/nextjs";
 
-export function NavMenu() {
+export function NavMenu({ ...props }) {
   const { user } = useUser();
   return (
-    <NavigationMenu className="max-md:hidden">
+    <NavigationMenu {...props}>
       <NavigationMenuList>
         {navItems.map((item) => {
           return (
@@ -28,7 +28,7 @@ export function NavMenu() {
                   {item.label}
                 </Link>
               </NavigationMenuTrigger>
-              <NavigationMenuContent className="grid w-[400px] grid-cols-1 gap-3 bg-primary-black p-3 md:w-max">
+              <NavigationMenuContent className="flex size-fit flex-col gap-3 bg-primary-black p-3">
                 {item.subItems?.map((subItem) => {
                   return (
                     <ListItem
@@ -65,9 +65,9 @@ const ListItem = ({ children, title, imageUrl, route }: ListItemProps) => {
   return (
     <NavigationMenuLink
       href={route}
-      className="transition-ease flex items-start rounded-md p-3 hover:bg-accent"
+      className="flex w-[320px] items-center rounded-sm p-2 hover:bg-accent"
     >
-      <div className=" flex size-[70px] items-center justify-center rounded-md bg-white">
+      <div className="size-max rounded-md bg-white">
         <Image
           src={imageUrl}
           width={70}

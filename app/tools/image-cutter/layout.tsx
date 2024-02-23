@@ -1,13 +1,11 @@
-"use client";
-
-import Navbar from "@/components/shared/nav/Navbar";
-import React from "react";
-import { ImageMattingContextProvider } from "../../../context/ImageMattingContext";
 import { NavMenu } from "@/components/shared/NavMenu";
+import Navbar from "@/components/shared/nav/Navbar";
+import { CropContextProvider } from "@/context/CropContext";
+import React from "react";
 
 const ToolsLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <ImageMattingContextProvider>
+    <CropContextProvider>
       <main className="flex size-full flex-col justify-between ">
         <Navbar />
         <section className="flex min-h-screen flex-1 flex-col px-6 pb-6 pt-28 max-md:pb-14 sm:px-14">
@@ -15,7 +13,7 @@ const ToolsLayout = ({ children }: { children: React.ReactNode }) => {
         </section>
         <NavMenu className="fixed left-4 top-24" />
       </main>
-    </ImageMattingContextProvider>
+    </CropContextProvider>
   );
 };
 

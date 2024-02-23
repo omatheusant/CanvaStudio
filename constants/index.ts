@@ -17,6 +17,12 @@ export const navItems: NavbarItem[] = [
         description: "Crie e edite designs personalizados.",
         imageUrl: "/assets/editor.png",
       },
+      {
+        name: "Cortar imagens",
+        route: `/tools/image-cutter/`,
+        description: "Cortar imagens para anúncios automaticamente.",
+        imageUrl: "/assets/image-cutter.jpg",
+      },
     ],
   },
 ];

@@ -138,4 +138,23 @@ body {
   .transition-ease {
     @apply transition ease-in-out duration-500 !important;
   }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 3px;
+    border-radius: 2px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #4b4b4b;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #1f1f1f;
+    border-radius: 50px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #383838;
+  }
 }

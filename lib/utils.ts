@@ -2,6 +2,33 @@ import jsPDF from "jspdf";
 import { twMerge } from "tailwind-merge";
 import { type ClassValue, clsx } from "clsx";
 
+import JSZip from "jszip";
+import { saveAs } from "file-saver";
+
+// Define the type for the function parameter
+type ImageUrls = string[];
+
+export const downloadImagesAsZip = async (
+  imageUrls: ImageUrls,
+): Promise<void> => {
+  const zip = new JSZip();
+  const folder = zip.folder("images");
+
+  const loadImage = (url: string): Promise<Blob> =>
+    fetch(url).then((res) => res.blob());
+
+  const imagePromises = imageUrls.map((url) => loadImage(url));
+
+  const images = await Promise.all(imagePromises);
+
+  images.forEach((image, index) => {
+    folder?.file(`image_${index}.jpg`, image);
+  });
+
+  const content = await zip.generateAsync({ type: "blob" });
+  saveAs(content, "images.zip");
+};
+
 const adjectives = [
   "Happy",
   "Creative",

@@ -3,7 +3,6 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { NavMenu } from "./components/NavMenu";
 
 const Navbar = () => {
   return (
@@ -11,7 +10,6 @@ const Navbar = () => {
       <Link href="/">
         <Image src="/assets/logo.svg" width={60} height={60} alt="Logo" />
       </Link>
-      <NavMenu />
       <SignedIn>
         <UserButton />
       </SignedIn>
