@@ -187,16 +187,10 @@ export type CursorChatProps = {
   ) => void;
 };
 
-type NavSubItems = {
+export type MenuItems = {
   name: string;
-  route: string;
-  description: string;
-  imageUrl: string;
-};
-
-export type NavbarItem = {
-  label: string;
   icon?: string;
   route: string;
-  subItems?: NavSubItems[];
+  description?: string;
+  imageUrl?: string;
 };

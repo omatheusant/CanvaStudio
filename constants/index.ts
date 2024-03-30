@@ -1,28 +1,22 @@
-import { NavbarItem } from "@/types/type";
+import { MenuItems } from "@/types/type";
 
-export const navItems: NavbarItem[] = [
+export const navItems: MenuItems[] = [
   {
-    label: "Ferramentas",
-    route: "/tools",
-    subItems: [
-      {
-        name: "Remover Fundo",
-        route: "/tools/remove-bg",
-        description: "Remova fundos de imagens com facilidade.",
-        imageUrl: "/assets/remove-bg.jpg",
-      },
-      {
-        name: "Editor",
-        route: `/tools/editor/`,
-        description: "Crie e edite designs personalizados.",
-        imageUrl: "/assets/editor.png",
-      },
-      {
-        name: "Cortar imagens",
-        route: `/tools/image-cutter/`,
-        description: "Cortar imagens para anúncios automaticamente.",
-        imageUrl: "/assets/image-cutter.jpg",
-      },
-    ],
+    name: "Remover Fundo",
+    route: "/tools/remove-bg",
+    description: "Remova fundos de imagens com facilidade.",
+    imageUrl: "/assets/remove-bg.jpg",
+  },
+  {
+    name: "Editor",
+    route: `/tools/editor/`,
+    description: "Crie e edite designs personalizados.",
+    imageUrl: "/assets/editor.png",
+  },
+  {
+    name: "Cortar imagens",
+    route: `/tools/image-cutter/`,
+    description: "Cortar imagens para anúncios automaticamente.",
+    imageUrl: "/assets/image-cutter.jpg",
   },
 ];

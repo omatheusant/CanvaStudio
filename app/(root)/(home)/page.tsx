@@ -1,24 +1,30 @@
 import { Button } from "@/components/ui/button";
-import React from "react";
+import { navItems } from "@/constants";
+import Image from "next/image";
+import Link from "next/link";
 
-const HomePage = () => {
+export default function Home() {
   return (
-    <div className="flex items-center justify-center px-8">
-      <div className=" flex flex-col items-center gap-3 text-center">
-        <h1 className="text-6xl font-semibold lg:text-7xl">
-          O que você vai <span className="text-gradient">criar </span>
-          hoje?
-        </h1>
-        <span className="max-w-[70%] xl:text-xl">
-          Ferramentas de uso rápido para criação e edição de fotos, dedign e
-          anúncios para diferentes marketplaces
-        </span>
-        <Button className="primary-gradient mt-3 h-12 w-64 text-xl font-semibold">
-          Comece agora
-        </Button>
+    <div className="text-center">
+      <div className="flex max-w-md flex-col justify-center">
+        <Image
+          src="/assets/logo-ismafer.png"
+          alt="logo"
+          width={300}
+          height={300}
+          className="self-center"
+        />
+        <p className="py-6 font-light text-[--light]">
+          Ferramentas de uso rápido para criação de anúncios da Ismafer.
+        </p>
+        <div className="flex flex-col gap-6">
+          {navItems.map((item) => (
+            <Link href={item.route} key={item.name}>
+              <Button className="w-full text-lg">{item.name}</Button>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
-};
-
-export default HomePage;
+}
